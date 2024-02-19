@@ -6,17 +6,17 @@
 /*   By: asaenko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:51:35 by asaenko           #+#    #+#             */
-/*   Updated: 2024/02/19 12:43:27 by asaenko          ###   ########.fr       */
+/*   Updated: 2024/02/19 12:51:03 by asaenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) ||
 		(c >= 97 && c <= 122))
 	{
-		return (1);
+		return (1024);
 	}
 	return (0);
 }

@@ -29,5 +29,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size);
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

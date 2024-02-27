@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaenko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 13:44:26 by asaenko           #+#    #+#             */
-/*   Updated: 2024/02/26 14:47:05 by asaenko          ###   ########.fr       */
+/*   Created: 2024/02/27 10:51:51 by asaenko           #+#    #+#             */
+/*   Updated: 2024/02/27 10:51:53 by asaenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t count)
+int	ft_tolower(int ch)
 {
-	unsigned char	*dest_cpy;
-	unsigned char	*src_cpy;
-
-	dest_cpy = (unsigned char *)dest;
-	src_cpy = (unsigned char *)src;
-	if (!dest && !src)
-		return (0);
-	if (dest == src)
-		return (dest);
-	if (dest <= src)
-		while (count--)
-			*dest_cpy++ = *src_cpy++;
-	else
-		while (count--)
-			dest_cpy[count] = src_cpy[count];
-	return (dest_cpy);
+	if (ch >= 65 && ch <= 90)
+	{
+		return (ch += 32);
+	}
+	else if (ch >= 97 && ch <= 122)
+	{
+		return (ch);
+	}
+	return (0);
 }

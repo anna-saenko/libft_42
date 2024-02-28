@@ -18,9 +18,5 @@ int	ft_toupper(int ch)
 	{
 		return (ch -= 32);
 	}
-	else if (ch >= 65 && ch <= 90)
-	{
-		return (ch);
-	}
-	return (0);
+	return (ch);
 }

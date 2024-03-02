@@ -25,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		s_cpy++;
 	}
+	if (*s_cpy == '\0' && c == '\0')
+		return ((char *)s_cpy);
 	return (NULL);
 }

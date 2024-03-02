@@ -14,15 +14,19 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*res;
+	char	*s_cpy;
 
 	res = NULL;
-	while(*s)
+	s_cpy = (char *)s;
+	while(*s_cpy)
 	{
-		if (*s == (char)c)
+		if (*s_cpy == (char)c)
 		{
-			res = (char *)s;
+			res = (char *)s_cpy;
 		}
-		s++;
+		s_cpy++;
 	}
+	if (*s_cpy == '\0' && c == '\0')
+		return ((char *)s_cpy);
 	return (res);
 }

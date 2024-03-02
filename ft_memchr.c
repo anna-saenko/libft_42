@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stddef.h>
 
 void	*ft_memchr(const void *ptr, int ch, size_t count)
 {

@@ -13,15 +13,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *s_cpy;
+	char	*res;
 
-	s_cpy = (char *)s;
-	while(*--s_cpy)
+	res = NULL;
+	while(*s)
 	{
-		if (*s_cpy == c)
+		if (*s == (char)c)
 		{
-			return(s_cpy);
+			res = (char *)s;
 		}
+		s++;
 	}
-	return (NULL);
+	return (res);
 }

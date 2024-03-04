@@ -40,7 +40,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen((char *)s1);
 	start = ft_checkstart(s1, set);
 	end = ft_checkend(s1, len, set);
-	len = len - ((size_t)start + (size_t)end);
+	if (start >= len || start + end >= len)
+	{
+		res = (char*)malloc(1);//(ft_substr("", 0, 0));
+		res[0] = '\0';
+		return (res);
+	}
+	len = len - (start + end);
 	res = ft_substr(s1, start, len);
 	return (res);
 }

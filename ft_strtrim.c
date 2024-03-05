@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asaenko <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 12:54:17 by asaenko           #+#    #+#             */
+/*   Updated: 2024/03/05 12:55:19 by asaenko          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static unsigned int	ft_checkstart(char const *s1, char const *set)
@@ -42,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_checkend(s1, len, set);
 	if (start >= len || start + end >= len)
 	{
-		res = (char*)malloc(1);//(ft_substr("", 0, 0));
+		res = (char *)malloc(1);
 		res[0] = '\0';
 		return (res);
 	}

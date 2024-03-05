@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asaenko <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 12:49:43 by asaenko           #+#    #+#             */
+/*   Updated: 2024/03/05 12:50:15 by asaenko          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	count_words(char *str, char c)
@@ -44,6 +56,16 @@ static char	*put_word(char *str, char c)
 	return (arr);
 }
 
+static void	*free_array(char **array, int i)
+{
+	while (i > 0)
+	{
+		free(array[i--]);
+	}
+	free(array);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -54,19 +76,16 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words((char *)s, c);
-	if (!(array = malloc(sizeof(char *) * (words + 1))))
+	array = malloc(sizeof(char *) * (words + 1));
+	if (!array)
 		return (NULL);
 	while (++i < words)
 	{
 		while (*s == c)
 			s++;
-		if (!(array[i] = put_word((char *)s, c)))
-		{
-			while (i > 0)
-				free(array[i--]);
-			free(array);
-			return (NULL);
-		}
+		array[i] = put_word((char *)s, c);
+		if (!array)
+			free_array(array, i);
 		s += ft_strlen(array[i]);
 	}
 	array[i] = NULL;

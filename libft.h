@@ -6,7 +6,7 @@
 /*   By: asaenko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:27:05 by asaenko           #+#    #+#             */
-/*   Updated: 2024/02/20 12:09:50 by asaenko          ###   ########.fr       */
+/*   Updated: 2024/03/05 16:09:47 by asaenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdint.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memset(void *dest, int ch, size_t count);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t count);
@@ -41,7 +42,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *str);
-char	*ft_substr(char const *s, unsigned int start,size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

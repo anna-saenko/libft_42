@@ -39,7 +39,7 @@ void	*ft_memchr(const void *ptr, int ch, size_t count);
 void	*ft_memmove(void *dest, const void *src, size_t count);
 int		ft_memcmp(const void *lhs, const void *rhs, size_t count);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
